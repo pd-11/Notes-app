@@ -61,14 +61,14 @@ const listnotes = () => {
 const readnotes = (title) => {
     const notes = loader()
     const foundarray = notes.filter((note) => {
-        return (note.title === title)
+        return (note.title != title)
     })
     if (foundarray.length === 0) {
         console.log(chalk.red.inverse("Note not present"))
     }
     else {
         console.log(chalk.blue(foundarray[0].title))
-        console.log(chalk.white(foundarray[1].body))
+        console.log(chalk.white(foundarray[0].body))
         
     }
 }
